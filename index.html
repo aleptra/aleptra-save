@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="version" content="1.0.0">
+  <script src="https://cdn.front.nu/nightly/front.js" module="globalize;data;navigate;keyboard;screen" var="api"
+    conf="debug:false;debugLocalhost:true;resetStyle:true;varsDir:assets/json/vars;storageKey:note;resetStyle:true"
+    globalize-conf="folder:assets/json/locales" navigate-conf="startpage:experimental/app/note;startpageLocal:app/note">
+    </script>
+  <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
+  <link rel="icon" href="data:,">
+  <title>Save</title>
+</head>
+
+<body screen-layout="ultimate">
+  <div id="navloader" absolute top="0" width="100%" class="navloader bcblack03 h2px" hide>
+    <div class="bcblack08"></div>
+  </div>
+  <header bgcolor="orange" color="white" height="4rem" padding="0 1rem" color="white" class="topbar shade1" gap="0.5rem">
+    <button click="toggle" clicktargetfield="aside[0]" radius="50%" class="dark hover-" radius="50%" width="40"
+      height="40" fontsize="24px">≡</button>
+    <a target="_top" href="./" bindglobal="title:title" globalize-get uppercase bold>{title}</a>
+    <div class="fr" flex gap="7">
+      <input type="checkbox" id="autosave" onvaluechange="alert:hej">
+      <label for="autosave">AutoSave</label>
+    </div>
+  </header>
+
+  <aside ontoggle="toggle.class[pf t0 zi50]" bgcolor="black09" color="white" screen-xxs="hide" screen-xl="show" flex
+    flexdirection="column" height="100%">
+    <ul flex flexdirection="column" gap="2rem" alignitems="center" height="100%" margintop="1rem">
+      <li flexdirection="column">
+        <a alignitems="center" gap="5" flexdirection="inherit">
+          <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
+            font="30px arial">&#43;</b><b>Upload</b>
+        </a>
+      </li>
+      <li flexdirection="column">
+        <a alignitems="center" gap="5" flexdirection="inherit">
+          <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
+            font="28px arial">&#8862;</b><b>Shared</b>
+      </li>
+      </a>
+    </ul>
+  </aside>
+  <main>
+    <div id="loader" class="loader"></div>
+    <div name="note" flex="1" padding="1rem" bindasset="apikey:api.api_key;url:api.notes.url"
+      bindvar="id:1" onvaluechange="data-reqpatch" data-src="{url}?id=eq.{id}" data-header="apikey:{apikey}"
+      data-loader="#loader" data-reqpatch="{url}?id=eq.{id}&limit=1&order=id" data-enctype="application/json"
+      data-get="0.note" width="100%" height="100%" border="0">
+    </textarea>
+  </main>
+  <aside></aside>
+  <footer></footer>
+</body>
+
+</html>
