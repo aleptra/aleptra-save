@@ -1,0 +1,31 @@
+<script src="https://cdn.front.nu/nightly/front.js"></script>
+<title>Files</title>
+<template srcdoc="../index" src="../_templates/default"></template>
+<div flex>
+  <h1 class="f1" bindquery="i:i">{i}</h1>
+  <button class="button round br50 w2r h2r fr bcblack white aic bs1"><i class="icon16">&#8854;</i></button>
+</div>
+<hr class="bcblack01 mt1">
+<div class="df mb1 gap1-">
+  <input
+    id="query"
+    type="text"
+    value=""
+    class="bs1 f3 p1 h3 br05"
+    globalize-get="human"
+    globalize-target="placeholder"
+    autocomplete="off"
+  >
+  <select
+    id="sort"
+    class="bs1 f0 p1 h3 br05 fs08"
+    globalize-target="placeholder"
+  >
+  <option>Updated</option>
+  </select>
+</div>
+<div
+  bindasset="endpoint1:api.schema.endpoint;endpoint2:api.table.endpoint"
+  bindvar="src1:{endpoint1};src2:{endpoint2}"
+  include="http://localhost:5555/cloud/save/_includes/list_files.html">
+</div>

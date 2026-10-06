@@ -1,0 +1,9 @@
+{
+  "origin": "https://api.aleptra.com",
+  "schema": {
+    "endpoint": "{origin}/_/"
+  },
+  "table": {
+    "endpoint": "{origin}/_/"
+  }
+}
