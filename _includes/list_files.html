@@ -3,23 +3,16 @@
 <div overflow="auto" width="100%" maxheight="70vh" scrollbar--set="width:thin;thumb:black;track:#eeeeee">
   <table width="max-content" minwidth="100%">
     <thead>
-      <tr
-        class="box shade1"
-        bindvar="src1;c"
-        bindasset="apikey:api.api_key"
-        bindquery="i:i;db:db"
-        data-src="{src1}{i}"
-        data-header="apikey:{apikey}"
-        data-loader="#loader"
-        data-iterate="columns">
-        <th data-get="column_name" scope="col" whitespace="nowrap" style="position:sticky;top:0;z-index:2;background-color:white"></th>
+      <tr>
+        <th scope="col" whitespace="nowrap" style="position:sticky;top:0;z-index:2;background-color:white"></th>
       </tr>
     </thead>
     <tbody
       bindvar="src2"
-      bindquery="i:i;db:db"
-      data-src="{src2}{i}&limit=100"
-      data-header="apikey:{apikey}"
+      storage-bindlocal="auth"
+      bindasset="endpoint:api.file.endpoint"
+      data-src="{endpoint}"
+      data-header="Authorization:Bearer {auth}"
       data-loader="#loader"
       data-iterate="true">
       <tr data-iterate="true" mouseover="bgcolor:[whitesmoke]" mouseout="bgcolor:[inherit]">

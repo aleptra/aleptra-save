@@ -1,6 +1,6 @@
 {
   "origin": "https://api.aleptra.com",
-  "schema": {
+  "file": {
     "endpoint": "{origin}/_/"
   },
   "table": {
