@@ -14,9 +14,10 @@
       data-src="{endpoint}"
       data-header="Authorization:Bearer {auth}"
       data-loader="#loader"
-      data-iterate="true">
-      <tr data-iterate="true" mouseover="bgcolor:[whitesmoke]" mouseout="bgcolor:[inherit]">
-        <td data-get="[*]" whitespace="nowrap"></td>
+      data-iterate="files.data.files">
+      <tr mouseover="bgcolor:[whitesmoke]" mouseout="bgcolor:[inherit]">
+        <td data-get="name" whitespace="nowrap"></td>
+        <td data-get="size" whitespace="nowrap"></td>
       </tr>
     </tbody>
   </table>
