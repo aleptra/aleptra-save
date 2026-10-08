@@ -1,11 +1,10 @@
-<!-- Front data module: nested wildcard iteration maps dynamic object properties. -->
 <div id="loader" class="loader"></div>
-<div overflow="auto" width="100%" maxheight="70vh" scrollbar--set="width:thin;thumb:black;track:#eeeeee">
+<div overflow="auto" width="100%" padding="1rem" maxheight="70vh" scrollbar--set="width:thin;thumb:black;track:#eeeeee">
   <table width="max-content" minwidth="100%">
     <thead>
       <tr>
-        <th scope="col" whitespace="nowrap" style="position:sticky;top:0;z-index:2;background-color:white"></th>
-      </tr>
+        <th scope="col" whitespace="nowrap" style="position:sticky;top:0;z-index:2;background-color:white">Name</th>
+       <th scope="col" whitespace="nowrap" style="position:sticky;top:0;z-index:2;background-color:white">Size</th>
     </thead>
     <tbody
       bindvar="src2"
@@ -14,9 +13,10 @@
       data-src="{endpoint}"
       data-header="Authorization:Bearer {auth}"
       data-loader="#loader"
-      data-iterate="files.data.files">
+      data-iterate="files.data.files"
+      data-sort="files.data.files.type">
       <tr mouseover="bgcolor:[whitesmoke]" mouseout="bgcolor:[inherit]">
-        <td data-get="name" whitespace="nowrap"></td>
+        <td data-get="name" data-set="type:type" whitespace="nowrap" ondata-getchange="if:([{type}]:[file])/insertafterbegin:[📄 ]?insertafterbegin:[📁 ]"></td>
         <td data-get="size" whitespace="nowrap"></td>
       </tr>
     </tbody>
