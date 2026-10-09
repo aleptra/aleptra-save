@@ -16,7 +16,7 @@
       data-iterate="files.data.files"
       data-sort="files.data.files.type">
       <tr mouseover="bgcolor:[whitesmoke]" mouseout="bgcolor:[inherit]">
-        <td data-get="name" data-set="type:type" whitespace="nowrap" ondata-getchange="if:([{type}]:[file])/insertafterbegin:[📄 ]?insertafterbegin:[📁 ]"></td>
+        <td data-get="name" data-set="type:type" whitespace="nowrap" ondata-get="if:([{type}]:[file])/insertafterbegin:[📄 ]?insertafterbegin:[📁 ]"></td>
         <td data-get="size" whitespace="nowrap"></td>
       </tr>
     </tbody>
