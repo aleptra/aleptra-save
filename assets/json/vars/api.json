@@ -5,5 +5,8 @@
   },
   "table": {
     "endpoint": "{origin}/_/"
+  },
+  "removefile": {
+    "endpoint": "{origin}/_/"
   }
 }
