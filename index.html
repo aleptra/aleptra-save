@@ -30,11 +30,9 @@
     flexdirection="column" height="100%">
     <ul flex flexdirection="column" gap="2rem" alignitems="center" height="100%" margintop="1rem">
       <li flexdirection="column">
-        <form action="https://api.aleptra.com/_/" method="POST"
-        storage-bindlocal="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
-      data-header="Authorization:Bearer {auth}"
-      enctype="multipart/form-data" flex
-          flexdirection="column">
+        <form action="https://api.aleptra.com/_/" method="POST" storage-bindlocal="auth"
+          bindasset="endpoint:api.file.endpoint" data-src="{endpoint}" data-header="Authorization:Bearer {auth}"
+          enctype="multipart/form-data" flex flexdirection="column">
           <a flexdirection="column" alignitems="center" target="main" gap="5" flexdirection="inherit"
             click="form-upload:[*.*]" onform-uploadok="submit" onform-uploadcancel="alert:[Upload cancelled]">
             <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
