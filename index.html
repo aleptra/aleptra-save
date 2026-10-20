@@ -23,7 +23,7 @@
     gap="0.5rem">
     <button click="toggle" clicktargetfield="aside[0]" radius="50%" class="dark hover-" radius="50%" width="40"
       height="40" fontsize="24px">≡</button>
-    <a target="_top" href="./" bindglobal="title:title" globalize-get uppercase bold>{title}</a>
+    <div target="_top" href="./" bindglobal="title:title" uppercase bold>{title}</div>
   </header>
 
   <aside ontoggle="toggle.class[pf t0 zi50]" bgcolor="black09" color="white" screen-xxs="hide" screen-xl="show" flex
@@ -37,23 +37,22 @@
       </li>
       <li flexdirection="column">
         <form action="https://api.aleptra.com/_/" method="POST" storage-bindlocal="auth"
-          bindasset="endpoint:api.file.endpoint" data-src="{endpoint}" data-header="Authorization:Bearer {auth}"
+          bindasset="endpoint:api.file.endpoint" action="{endpoint}" data-header="Authorization:Bearer {auth}"
+          form-onuploadsuccess="alert:[Upload successful]" form-onuploadcancel="alert:[Upload cancelled]"
           enctype="multipart/form-data" flex flexdirection="column">
           <a flexdirection="column" alignitems="center" target="main" gap="5" flexdirection="inherit"
-            click="form-upload:[*.*]" onform-uploadok="submit" onform-uploadcancel="alert:[Upload cancelled]">
+            click="form-upload:[*.*]">
             <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
               font="30px arial">&#43;</b><b>Upload</b>
           </a>
+        </form>
       </li>
       <a href="browse.html" alignitems="center" target="main" gap="5" flexdirection="inherit">
         <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
           font="28px arial">&#x25A6;</b><b>Browse</b>
-        <li flexdirection="column">
-          <a alignitems="center" gap="5" flexdirection="inherit">
-            <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
-              font="28px arial">&#8862;</b><b>Shared</b>
-        </li>
-      </a>
+        <a hide alignitems="center" gap="5" flexdirection="inherit">
+          <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
+            font="28px arial">&#8862;</b><b>Shared</b></a>
     </ul>
   </aside>
   <main include="_includes/home.html"></main>
