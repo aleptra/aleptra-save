@@ -35,7 +35,7 @@
     <tbody>
     <tbody bindvar="src2" storage-bindlocal="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
       data-header="Authorization:Bearer {auth}" data-iterate="files" data-sort="files.data.files.modified"
-      data-sortorder="desc" data-limit="5" data-bind="size:#size">
+      data-sortorder="desc" data-limit="5" data-bind="size:#size;fileCount:#fileCount">
       <tr style="border-bottom: 1px solid #f0f0f0;" mouseover="bgcolor:[#f9f9f9]" mouseout="bgcolor:[white]">
         <td style="padding: 0.5rem;" data-get="name"></td>
         <td style="padding: 0.5rem; color: gray; font-size: 0.9rem;" data-get="modified"></td>
