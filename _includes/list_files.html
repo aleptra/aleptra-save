@@ -1,29 +1,32 @@
 <div id="loader" class="loader"></div>
 <div overflow="auto" width="100%" padding="1rem" maxheight="90vh" scrollbar--set="width:thin;thumb:black;track:#eeeeee">
-  <table width="max-content" minwidth="100%">
+  <table minwidth="100%">
     <thead borderbottom="1px solid black" style="position:sticky;z-index:2;background-color:white" top="0">
-      <tr>
-        <th scope="col" whitespace="nowrap">Name</th>
-        <th scope="col" whitespace="nowrap">Size</th>
-        <th scope="col" whitespace="nowrap" width="1rem"></th>
+      <th scope="col" whitespace="nowrap">Name</th>
+      <th scope="col" whitespace="nowrap">Size</th>
+      <th scope="col">Modified</th>
+      <th scope="col" whitespace="nowrap" width="1rem"></th>
     </thead>
     <tbody bindvar="src2" storage-bindlocal="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
-      data-header="Authorization:Bearer {auth}" data-loader="#loader" data-iterate="files.data.files"
-      data-sort="files.data.files.type">
+      data-header="Authorization:Bearer {auth}" data-loader="#loader" data-iterate="files"
+      data-sort="files.type">
       <tr mouseover="bgcolor:[whitesmoke]" mouseout="bgcolor:[inherit]">
         <td data-get="name" data-set="type:type" whitespace="nowrap"
           ondata-get="if:([{type}]:[file])/insertafterbegin:[📄 ]?insertafterbegin:[📁 ]"></td>
         <td data-get="size" whitespace="nowrap"></td>
+        <td data-get="modified" whitespace="nowrap"></td>
         <td>
           <details id="test" class="pr" flex="none" clickoutside="close">
             <summary class="button p05 br50 hover-"><i class="icon16">⋮</i></summary>
             <div class="pa r0 bcwhite bs1 br05 zi50" padding="0.5rem" minwidth="10rem" id="details">
-              <a click="data-reqget" onclicked="close:#test" data-set="name:name" data-reqget="https://api.aleptra.com/_/{name}"
-              storage-bindlocal="auth" data-header="Authorization:Bearer {auth};Accept:application/octet-stream" data-download="true"
-              class="p05 db hover-" globalize-get>Download</a>
+              <a click="data-reqget" onclicked="close:#test" data-set="name:name"
+                data-reqget="https://api.aleptra.com/_/{name}" storage-bindlocal="auth"
+                data-header="Authorization:Bearer {auth};Accept:application/octet-stream" data-download="true"
+                class="p05 db hover-" globalize-get>Download</a>
               <a class="p05 db hover-" globalize-get>Rename</a>
               <a bindvar="src" click="data-reqdelete" data-set="name:name" data-reqdelete="{src}{name}"
-                storage-bindlocal="auth" data-header="Authorization:Bearer {auth}" class="p05 db hover- red" globalize-get>Remove</a>
+                storage-bindlocal="auth" data-header="Authorization:Bearer {auth}" class="p05 db hover- red"
+                globalize-get>Remove</a>
             </div>
           </details>
         </td>

@@ -2,50 +2,46 @@
   <!-- Quick Actions -->
   <div flex gap="1rem" screen-xxs="flexdirection:[column]" screen-md="flexdirection:[row]">
     <a href="browse.html" target="main" flex="1" padding="1.5rem" bgcolor="orange" color="white" border="none"
-      radius="0.5rem" cursor="pointer" hover="bgcolor:[darkorange]" textalign="center" class="button" globalize-get>▦
+      radius="0.5rem" cursor="pointer" hover="bgcolor:[darkorange]" textalign="center" globalize-get>▦
       Browse Files</a>
-    <a href="#upload" target="main" flex="1" padding="1.5rem" bgcolor="black" color="white" border="none"
-      radius="0.5rem" cursor="pointer" hover="bgcolor:[#333]" textalign="center" class="button" globalize-get>&#43; Upload
-      Files</a>
+    <a click="click:#upload" target="main" flex="1" padding="1.5rem" bgcolor="black" color="white" border="none"
+      radius="0.5rem" cursor="pointer" hover="bgcolor:[#333]" textalign="center" globalize-get>&#43;
+      Upload Files</a>
   </div>
 
   <!-- Stats Grid -->
-  <div flex gap="1rem" flexwrap="wrap">
+  <div flex gap="1rem" id="test" flexwrap="wrap">
     <div flex="1" minwidth="150px" padding="1rem" bgcolor="whitesmoke" radius="0.5rem" border="1px solid #ddd">
       <div flex flexdirection="column" gap="0.5rem">
         <small color="gray" globalize-get>Total Files</small>
-        <h2 id="stat-files">0</h2>
+        <h2 id="fileCount">0</h2>
       </div>
     </div>
     <div flex="1" minwidth="150px" padding="1rem" bgcolor="whitesmoke" radius="0.5rem" border="1px solid #ddd">
       <div flex flexdirection="column" gap="0.5rem">
         <small color="gray" globalize-get>Storage Used</small>
-        <h2 id="stat-storage">0 MB</h2>
+        <h2 id="size">0</h2>
       </div>
     </div>
   </div>
 
   <!-- Recent Files Section -->
-  <div flex flexdirection="column" gap="1rem">
-    <h2 globalize-get>Recent Files</h2>
-    <div id="recent-files" overflow="auto" maxheight="300px" border="1px solid #ddd" radius="0.5rem">
-      <table width="100%" style="border-collapse: collapse;">
-        <thead style="background-color: #f5f5f5; position: sticky; top: 0;">
-          <tr>
-            <th style="padding: 0.5rem; text-align: left; border-bottom: 1px solid #ddd;">Name</th>
-            <th style="padding: 0.5rem; text-align: left; border-bottom: 1px solid #ddd;">Modified</th>
-          </tr>
-        </thead>
-        <tbody bindvar="src2" storage-bindlocal="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
-          data-header="Authorization:Bearer {auth}" data-iterate="files.data.files"
-          data-sort="files.data.files.modified" data-sortorder="desc" data-limit="5">
-          <tr style="border-bottom: 1px solid #f0f0f0;" mouseover="bgcolor:[#f9f9f9]" mouseout="bgcolor:[white]">
-            <td style="padding: 0.5rem;" data-get="name"></td>
-            <td style="padding: 0.5rem; color: gray; font-size: 0.9rem;" data-get="modified"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <a href="browse.html" target="main" color="orange" globalize-get>View all files →</a>
-  </div>
+  <h2 margintop="2rem" globalize-get>Recent Files</h2>
+  <table minwidth="100%">
+    <thead>
+      <th>Name</th>
+      <th>Modified</th>
+    </thead>
+    <tbody>
+    <tbody bindvar="src2" storage-bindlocal="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
+      data-header="Authorization:Bearer {auth}" data-iterate="files" data-sort="files.data.files.modified"
+      data-sortorder="desc" data-limit="5" data-bind="size:#size">
+      <tr style="border-bottom: 1px solid #f0f0f0;" mouseover="bgcolor:[#f9f9f9]" mouseout="bgcolor:[white]">
+        <td style="padding: 0.5rem;" data-get="name"></td>
+        <td style="padding: 0.5rem; color: gray; font-size: 0.9rem;" data-get="modified"></td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="browse.html" target="main" color="orange" globalize-get>View all files →</a>
+</div>
 </div>
