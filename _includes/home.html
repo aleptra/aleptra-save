@@ -33,7 +33,7 @@
       <th>Modified</th>
     </thead>
     <tbody>
-    <tbody bindvar="src2" storage-bindlocal="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
+    <tbody bindvar="src2" storage-bindcookie="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
       data-header="Authorization:Bearer {auth}" data-iterate="files" data-sort="files.data.files.modified"
       data-sortorder="desc" data-limit="5" data-bind="size:#size;fileCount:#fileCount">
       <tr style="border-bottom: 1px solid #f0f0f0;" mouseover="bgcolor:[#f9f9f9]" mouseout="bgcolor:[white]">

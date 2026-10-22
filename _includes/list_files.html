@@ -7,7 +7,7 @@
       <th scope="col">Modified</th>
       <th scope="col" whitespace="nowrap" width="1rem"></th>
     </thead>
-    <tbody bindvar="src2" storage-bindlocal="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
+    <tbody bindvar="src2" storage-bindcookie="auth" bindasset="endpoint:api.file.endpoint" data-src="{endpoint}"
       data-header="Authorization:Bearer {auth}" data-loader="#loader" data-iterate="files"
       data-sort="files.type">
       <tr mouseover="bgcolor:[whitesmoke]" mouseout="bgcolor:[inherit]">
@@ -20,12 +20,12 @@
             <summary class="button p05 br50 hover-"><i class="icon16">⋮</i></summary>
             <div class="pa r0 bcwhite bs1 br05 zi50" padding="0.5rem" minwidth="10rem" id="details">
               <a click="data-reqget" onclicked="close:#test" data-set="name:name"
-                data-reqget="https://api.aleptra.com/_/{name}" storage-bindlocal="auth"
+                data-reqget="https://api.aleptra.com/_/{name}" storage-bindcookie="auth"
                 data-header="Authorization:Bearer {auth};Accept:application/octet-stream" data-download="true"
                 class="p05 db hover-" globalize-get>Download</a>
               <a class="p05 db hover-" globalize-get>Rename</a>
               <a bindvar="src" click="data-reqdelete" data-set="name:name" data-reqdelete="{src}{name}"
-                storage-bindlocal="auth" data-header="Authorization:Bearer {auth}" class="p05 db hover- red"
+                storage-bindcookie="auth" data-header="Authorization:Bearer {auth}" class="p05 db hover- red"
                 globalize-get>Remove</a>
             </div>
           </details>

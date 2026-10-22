@@ -8,8 +8,7 @@
   <script src="https://cdn.front.nu/nightly/front.js" module="globalize;data;navigate;keyboard;screen;storage;form"
     var="api"
     conf="debug:false;debugLocalhost:true;resetStyle:true;varsDir:assets/json/vars;storageKey:save;resetStyle:true"
-    auth-conf="cookieDomain:.aleptra.com"
-    globalize-conf="folder:assets/json/locales"
+    auth-conf="cookieDomain:.aleptra.com" globalize-conf="folder:assets/json/locales"
     navigate-conf="startpage:experimental/app/save;startpageLocal:app/save">
     </script>
   <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
@@ -38,7 +37,7 @@
         </a>
       </li>
       <li flexdirection="column">
-        <form action="https://api.aleptra.com/_/" method="POST" storage-bindlocal="auth"
+        <form action="https://api.aleptra.com/_/" method="POST" storage-bindcookie="auth"
           bindasset="endpoint:api.file.endpoint" action="{endpoint}" data-header="Authorization:Bearer {auth}"
           form-onuploadsuccess="alert:[Upload successful]" form-onuploadcancel="alert:[Upload cancelled]"
           enctype="multipart/form-data" flex flexdirection="column">
