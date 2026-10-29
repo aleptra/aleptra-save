@@ -9,32 +9,41 @@
     var="api"
     conf="debug:false;debugLocalhost:true;resetStyle:true;varsDir:assets/json/vars;storageKey:save;resetStyle:true"
     auth-conf="cookieDomain:.aleptra.com" globalize-conf="folder:assets/json/locales"
-    navigate-conf="startpage:experimental/app/save;startpageLocal:app/save"
-    auth-protect="redirect:/account/login">
+    navigate-conf="startpage:experimental/app/save;startpageLocal:app/save" auth-protect="redirect:/account/login">
     </script>
   <link type="text/css" href="https://cdn.front.nu/dist/front.css" rel="stylesheet">
   <link rel="icon" href="data:,">
   <title>Save</title>
 </head>
 
-<body screen-layout="ultimate">
+<body screen-layout="navside" screen-layoutdir="row">
   <div id="navloader" absolute top="0" width="100%" class="navloader bcblack03 h2px" hide>
     <div class="bcblack08"></div>
   </div>
-  <header bgcolor="orange" color="white" height="4rem" padding="0 1rem" color="white" class="topbar shade1"
-    gap="0.5rem">
-    <button click="toggle" clicktargetfield="aside[0]" radius="50%" class="dark hover-" radius="50%" width="40"
-      height="40" fontsize="24px">≡</button>
-    <div target="_top" href="./" bindglobal="title:title" uppercase bold>{title}</div>
+  <header bgcolor="orange" color="white" height="4rem" padding="0 1rem" color="white" class="topbar shade1" gap="0.5rem"
+    alignitems="center" justifycontent="space-between">
+    <div flex gap="0.5rem" alignitems="center">
+      <button click="toggle" clicktargetfield="nav" radius="50%" bgcolor="transparent" width="40" height="40"
+        fontsize="24px">≡</button>
+      <a target="_top" href="./" uppercase bold letterspacing="2">Save</a>
+    </div>
+    <input type="text" placeholder="Search files..." width="200px" padding="0.5rem 1rem" radius="2rem"
+      border="1px solid rgba(255,255,255,0.3)" bgcolor="rgba(255,255,255,0.1)" color="white" fontsize="14px">
   </header>
 
-  <aside ontoggle="toggle.class[pf t0 zi50]" bgcolor="black09" color="white" screen-xxs="hide" screen-xl="show" flex
-    flexdirection="column" height="100%" fontsize="13px" maxwidth="6rem">
-    <ul flex flexdirection="column" gap="2rem" alignitems="center" height="100%" margintop="1rem">
+  <nav bgcolor="black09" color="white" screen-xxs="hide" screen-xl="show" flex flexdirection="column" fontsize="13px"
+    maxwidth="6rem" style="box-shadow: 2px 0 12px rgba(0,0,0,0.3); position: relative; z-index: 10;">
+    <ul flex flexdirection="column" gap="2rem" bgcolor="orange" alignitems="center" margintop="">
+      <img radius="50%" width="32" height="32" src="https://www.gravatar.com/avatar/?d=identicon">
+    </ul>
+    <hr color="black">
+    <ul flex flexdirection="column" gap="2rem" padding="1.5rem 1rem" alignitems="center" height="100%" margintop="1rem">
       <li flexdirection="column">
-        <a href="./" alignitems="center" target="_top" gap="5" flexdirection="inherit">
+        <a href="./" alignitems="center" target="_top" gap="5" flexdirection="inherit"
+          style="transition: transform 0.2s ease; cursor: pointer;">
           <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
-            font="32px arial">⌂</b><b>Home</b>
+            font="32px arial"
+            style="transition: background-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">⌂</b><b>Home</b>
         </a>
       </li>
       <li flexdirection="column">
@@ -43,22 +52,25 @@
           form-onuploadsuccess="alert:[Upload successful]" form-onuploadcancel="alert:[Upload cancelled]"
           enctype="multipart/form-data" flex flexdirection="column">
           <a flexdirection="column" alignitems="center" target="main" gap="5" flexdirection="inherit"
-            click="form-upload:[*.*]" id="upload">
+            click="form-upload:[*.*]" id="upload" style="transition: transform 0.2s ease; cursor: pointer;">
             <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
-              font="30px arial">&#43;</b><b>Upload</b>
+              font="30px arial"
+              style="transition: background-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">&#43;</b><b>Upload</b>
           </a>
         </form>
       </li>
-      <a href="browse.html" alignitems="center" target="main" gap="5" flexdirection="inherit">
+      <a href="browse.html" alignitems="center" target="main" gap="5" flexdirection="inherit"
+        style="transition: transform 0.2s ease; cursor: pointer;">
         <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
-          font="28px arial">&#x25A6;</b><b>Browse</b>
+          font="28px arial"
+          style="transition: background-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">&#x25A6;</b><b>Browse</b>
         <a hide alignitems="center" gap="5" flexdirection="inherit">
           <b radius="50%" alignitems="inherit" bgcolor="black" width="42" height="42" justifycontent="center"
-            font="28px arial">&#8862;</b><b>Shared</b></a>
+            font="28px arial" style="box-shadow: 0 2px 6px rgba(0,0,0,0.2);">&#8862;</b><b>Shared</b></a>
     </ul>
-  </aside>
-  <main include="_includes/home.html"></main>
-  <aside></aside>
+  </nav>
+  <main include="_includes/home.html" screen-xxs="padding:[1rem]" screen-sm="padding:[2rem]" screen-xl="padding:[2rem]">
+  </main>
   <footer></footer>
 </body>
 
